@@ -1,0 +1,19 @@
+body {
+    margin: 0px;
+}
+
+.table-col {
+    width: 50%;
+}
+
+.table-main .red {
+    background-color: red;
+}
+
+.table-main .green {
+    background-color: green;
+}
+.table-main {
+    width:100vw;
+    height:100vh;
+}
