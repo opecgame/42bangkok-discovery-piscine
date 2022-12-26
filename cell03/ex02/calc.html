@@ -1,18 +1,46 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Calculator</title>
     <script>
-        function cal() {
-            
+        function sum() {
+            let number1 = document.getElementById("number1").value;
+            let number2 = document.getElementById("number2").value;
+            let operator = document.getElementById("op").value;
+            if (operator == "") alert("Please select and operator");
+            else if (/^[0-9]+$/.test(number1) && /^[0-9]+$/.test(number2)) {
+                if (parseInt(number1) < 0 || parseInt(number2) < 0) alert("Error :(");
+                else if ((operator == "%" || operator == "/") && number2 == 0) alert("It's over 9000!")
+                else {
+                    alert(eval(number1 + operator + number2));
+                }
+            } else alert("Error :(")
         }
+
+        setTimeout(() => alert("please use me..."), 30000);
     </script>
 </head>
+
 <body>
     <div>
+        <input id="number1" type="number" placeholder="Number 1">
+        <form>
+            <select id="op">
+                <option value="" selected hidden>Choose</option>
+                <option value="+">+</option>
+                <option value="-">-</option>
+                <option value="*">*</option>
+                <option value="/">/</option>
+                <option value="%">%</option>
+            </select>
+        </form>
+        <input id="number2" type="number" placeholder="Number 2">
+        <input type="submit" value="Try me!" onclick="sum()">
     </div>
 </body>
+
 </html>
