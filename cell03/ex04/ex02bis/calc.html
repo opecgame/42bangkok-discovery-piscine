@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <title>Calculator</title>
+    <script>
+        $(document).ready(function() {
+            $('#calculate').click(function() {
+                if($("#operator").val() == 'Choose') alert("Please select and operator");
+                else if(parseInt($("#number1").val()) < 0 || parseInt($("#number2").val()) < 0 || isNaN(parseInt($("#number1").val())) || isNaN(parseInt($("#number2").val()))) alert("Error :(");
+                else if ($("#number1").val() < 0 || $("#number2").val() < 0) alert("Error :(");
+                else if (($('#operator').val() == '%' || $('#operator').val() == '/') && $('#number2').val() == 0) alert("It's over 9000!");
+                else
+                {
+                    var res = eval($('#number1').val() + $('#operator').val() + $('#number2').val());
+                    alert(res);
+                }
+            })
+        })
+
+        setTimeout(() => alert("please use me..."), 30000);
+    </script>
+</head>
+
+<body>
+    <div>
+        <input id="number1" type="number" placeholder="Number 1">
+        <form>
+            <select id="operator">
+                <option value="" selected hidden>Choose</option>
+                <option value="+">+</option>
+                <option value="-">-</option>
+                <option value="*">*</option>
+                <option value="/">/</option>
+                <option value="%">%</option>
+            </select>
+        </form>
+        <input id="number2" type="number" placeholder="Number 2">
+        <input type="submit" id="calculate" value="Try me!">
+    </div>
+</body>
+
+</html>

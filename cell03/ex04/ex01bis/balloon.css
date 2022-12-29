@@ -1,0 +1,15 @@
+body {
+    margin: 0 ;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+.ballon {
+    width : 200px;
+    height : 200px;
+    border-radius: 50%;
+    background-color: red;
+}
